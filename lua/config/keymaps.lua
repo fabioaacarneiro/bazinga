@@ -21,4 +21,6 @@ map("n", "<leader>gd", function()
   )
 end, { desc = "LazyDocker (root dir)" })
 
-map("i", "jk", "<esc>")
+map("i", "jk", "<esc>", { desc = "exit from insert mode" })
+
+map("n", "<leader>o", ":Neotree toggle dir=./<CR>", { desc = "Open file explorer on left panel", remap = true })
