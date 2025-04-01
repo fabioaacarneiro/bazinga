@@ -29,6 +29,11 @@ return {
             "shfmt",
             "stylua",
             "tailwindcss-language-server",
+            "rubocop",
+            "ruby-lsp",
+            "rubyfmt",
+            "goimports",
+            "gopls",
         },
     },
 }

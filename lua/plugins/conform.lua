@@ -1,15 +1,16 @@
 return {
     "stevearc/conform.nvim",
-    opt = {
+    opts = {
         formatters_by_ft = {
             lua = { "stylua" },
-            python = { "isort", "black" },
-            javascript = { "prettierd", "prettier", stop_after_first = true },
-            go = { "goimports", "gofmt" },
+            go = { "goimports", "gotmt" },
         },
         format_on_save = {
-            timeout_ms = 500,
-            lsp_format = "fallback",
+            lsp_format = "falback",
+            timout_ms = 1500,
+        },
+        format_after_save = {
+            lsp_format = "falback",
         },
     },
 }
