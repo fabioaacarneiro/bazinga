@@ -1,8 +1,8 @@
 # 💤 Bazinga Neovim DotFile, by Fabio Carneiro
 
-This is my effort to fully integrate LazyVim setup with Laravel and all Laravel related tools. It works great with Livewire v3, Volt and Folio. When using Volt, use the class-based syntax for better compatibility. The functional Volt also works, but has issues with $this.
+This is my effort to fully integrate LazyVim setup with Laravel and all Laravel related tools, this. It works great with Livewire v3, Volt and Folio. When using Volt, use the class-based syntax for better compatibility. The functional Volt also works, but has issues with $this.
 
-This project was originally a fork of LazyVim tailored for Laravel developers, but it has been modified to remove the dependency on LazyVim, keeping the core functionality and adding new improvements and features.
+This project was originally a [fork of LazyVim tailored for Laravel developers](https://github.com/kauffinger/lazyvim), but it was modified to remove the dependency on LazyVim to follow a completely independent path from LazyVim, keeping the core functionalities and adding new improvements and features.
 
 You can still refer to the LazyVim documentation for keyboard shortcuts, I would venture to say that 90% of the shortcuts used in LazyVim have been kept.
 
