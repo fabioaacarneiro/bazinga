@@ -1,38 +1,40 @@
-# 💤 LazyVim + Laravel
+# 💤 Bazinga Neovim DotFile, by Fabio Carneiro
 
-(and some stuff I also use)
-This is my best effort to fully integrate my LazyVim config with Laravel and all Laravel-related tools.
-Works great with Livewire v3 as well as Volt and Folio.
-When using Volt, use class-based syntax for maximum compatibility.
-Functional Volt works, too, but has issues with `$this`.
+This is my effort to fully integrate LazyVim setup with Laravel and all Laravel related tools. It works great with Livewire v3, Volt and Folio. When using Volt, use the class-based syntax for better compatibility. The functional Volt also works, but has issues with $this.
+
+This project was originally a fork of LazyVim tailored for Laravel developers, but it has been modified to remove the dependency on LazyVim, keeping the core functionality and adding new improvements and features.
+
+You can still refer to the LazyVim documentation for keyboard shortcuts, I would venture to say that 90% of the shortcuts used in LazyVim have been kept.
 
 A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
-Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
+Please refer to the [documentation](https://lazyvim.github.io/installation) to get started.
 
 ## Laravel Native
 
-This config is setup with the best available dev tooling for laravel
+This setup is configured with the best development tools available for laravel
 
 - Intelephense
-- Blade Language Support
-- Blade Formatter
+- Blade language support
+- Blade formatter
 - Pint
-- Phpstan (make sure you configure larastan in your project)
+- Phpstan (make sure to configure larastan in your project)
 - Rustywind
 - Tailwind LS
-- XDebug with configuration for Laravel Sail
-- Treesitter beta for blade files included
+- XDebug with Laravel Sail configuration
+- Treesitter beta for included blade files
 
 ## Additions
 
+I also use it for developing other stacks with Rails, Go with Gin and Goyave, React, Astro, and more.
+
 ### Requirements
 
-If you encounter an issue with `Intelephense` not recognising facade or model function calls, you will need to install [Laravel IDE Helper](https://github.com/barryvdh/laravel-ide-helper) into your project and execute the relevant artisan commands. Thanks to [@ermand](https://github.com/ermand) for bringing up the issue as well as the solution.
+If you encounter an issue with `Intelephense` not recognizing facade or template function calls, you will need to install [Laravel IDE Helper](https://github.com/barryvdh/laravel-ide-helper) in your project and run the relevant artisan commands. Thanks to [@ermand](https://github.com/ermand) for bringing up the issue and also the solution.
 
-Make sure you install all TreeSitter parsers by doing:
+Make sure you install all of TreeSitter's parsers by doing:
 `:TSInstall all` and `:TSInstall php_only`.
-This will install both the experimental blade parser, for which configuration is included in this config, as well as the php_only parser, which is needed for it to work fully.
-For some reason php_only is not included in `all`.
+This will install the experimental blade parser, whose configuration is included in this configuration, as well as the php_only parser, which is required for it to work fully.
+For some reason, php_only is not included in `all`.
 
 Optional:
 
@@ -48,9 +50,8 @@ Optional:
 
 ### Theme
 
-- I concede, we are back to using catppuccin. There is just too many integrations.
+The main themes are:
+- [Solarized Osaka](https://github.com/craftzdog/solarized-osaka.nvim)
+- [catppuccin](https://github.com/catppuccin/nvim)
 
-## Troubleshooting
-
-If opening a py file leads to pyright analyzing your whole library, make sure to add an empty `pyrightconfig.json` into the file root.
-This can be your $HOME folder or for example on darwin using homebrew it could be `/opt/homebrew/`.
+The catppuccin theme has not changed at all, but as for Solarized Osaka, I made changes to better suit the [ghostty](https://ghostty.org/) background blur with transparency
