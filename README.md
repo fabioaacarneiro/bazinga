@@ -27,6 +27,10 @@ This setup is configured with the best development tools available for laravel
 
 I also use it for developing other stacks with Rails, Go with Gin and Goyave, React, Astro, and more.
 
+For default, this dotfile give a Codeium plugin, similar to Copilot, to help us with
+AI coge generations and chat, you need a account and run *:Codeium Auth* to make
+a login and use the full features of plugin
+
 ### Requirements
 
 If you encounter an issue with `Intelephense` not recognizing facade or template function calls, you will need to install [Laravel IDE Helper](https://github.com/barryvdh/laravel-ide-helper) in your project and run the relevant artisan commands. Thanks to [@ermand](https://github.com/ermand) for bringing up the issue and also the solution.
