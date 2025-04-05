@@ -27,9 +27,11 @@ end, { desc = "force save all files", remap = true })
 --     end
 -- end, { desc = "close others buffers", noremap = false, silent = true })
 
+-- in may thinkpad T430, <C-/> doesn't work well
+-- for this reason i setting up to <C-\\>
 vim.keymap.set(
     { "i", "n", "t" },
-    "<C-/>",
+    "<C-\\>",
     "<C-\\><C-n>:lua Snacks.terminal()<CR>",
     { desc = "Open integrated terminal", noremap = false }
 )
