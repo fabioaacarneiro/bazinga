@@ -44,11 +44,12 @@ return {
         cmp.setup({
             -- Completion sources
             sources = {
-                { name = "nvim_lsp" }, -- LSP
-                { name = "buffer" }, -- buffer
-                { name = "path" }, -- file paths
-                { name = "luasnip" }, -- snippets
+                { name = "nvim_lsp" },         -- LSP
+                { name = "buffer" },           -- buffer
+                { name = "path" },             -- file paths
+                { name = "luasnip" },          -- snippets
                 { name = "friendly-snippet" }, -- snippets
+                { name = "codeium" },          -- IA for coding
             },
             window = {
                 completion = cmp.config.window.bordered({
