@@ -9,7 +9,7 @@ return {
             virtual_text = {
                 enabled = not vim.g.ai_cmp,
                 key_bindings = {
-                    accept = "<tab>", -- handled by nvim-cmp / blink.cmp
+                    accept = "<c-y>", -- handled by nvim-cmp / blink.cmp
                     accept_word = false,
                     accept_line = false,
                     clear = false,
