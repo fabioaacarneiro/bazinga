@@ -40,3 +40,10 @@ vim.keymap.set(
 vim.keymap.set({ "n" }, "<Leader>k", function()
     vim.lsp.buf.signature_help()
 end, { silent = true, noremap = true, desc = "toggle signature" })
+
+-- copy selected text to clipboard
+vim.keymap.set({ "n", "x" }, "gy", '"+y', { desc = "Copiar para área de transferência" })
+
+-- past from clipboard
+vim.keymap.set({ "n", "x" }, "gp", '"+p', { desc = "Colar da área de transferência" })
+vim.keymap.set({ "n", "x" }, "gP", '"+P', { desc = "Colar da área de transferência antes do cursor" })
