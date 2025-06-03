@@ -5,4 +5,4 @@ require("config.autocmds")
 require("config.options")
 
 -- vim.cmd("colorscheme solarized-osaka")
-vim.cmd("colorscheme catppuccin-frappe")
+-- vim.cmd("colorscheme catppuccin-frappe")

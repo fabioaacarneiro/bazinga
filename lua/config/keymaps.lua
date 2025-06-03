@@ -12,22 +12,7 @@ vim.keymap.set({ "n", "i" }, "<C-s>", function()
     vim.api.nvim_command("write")
 end, { desc = "force save all files", remap = true })
 
--- close all other buffers
--- vim.keymap.set("n", "<leader>bo", function()
---     local current_buf = vim.api.nvim_get_current_buf()
---     local buffers = vim.api.nvim_list_bufs()
---
---     for _, buf in ipairs(buffers) do
---         if buf ~= current_buf and vim.api.nvim_buf_is_loaded(buf) then
---             local filetype = vim.api.nvim_get_option_value("filetype", { buf = buf })
---             if filetype ~= "snacks_picker_input" then
---                 vim.api.nvim_buf_delete(buf, { force = true })
---             end
---         end
---     end
--- end, { desc = "close others buffers", noremap = false, silent = true })
-
--- in may thinkpad T430, <C-/> doesn't work well
+-- in my thinkpad T430, <C-/> doesn't work well
 -- for this reason i setting up to <C-\\>
 vim.keymap.set(
     { "i", "n", "t" },
