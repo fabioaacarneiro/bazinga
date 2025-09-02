@@ -1,3 +1,17 @@
+-- Configura os handlers do LSP para usar borda arredondada
+local lsp_handlers = vim.lsp.handlers
+
+lsp_handlers["textDocument/hover"] = vim.lsp.with(lsp_handlers.hover, {
+  border = "rounded",
+})
+
+lsp_handlers["textDocument/signatureHelp"] = vim.lsp.with(lsp_handlers.signature_help, {
+  border = "rounded",
+})
+
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#1e1e2e", fg = "#cdd6f4" })
+vim.api.nvim_set_hl(0, "FloatBorder", { bg = "#1e1e2e", fg = "#89b4fa" })
+
 return {
     "hrsh7th/nvim-cmp",
     dependencies = {
@@ -51,14 +65,23 @@ return {
                 { name = "friendly-snippet" }, -- snippets
                 { name = "codeium" },          -- IA for coding
             },
+            -- window = {
+            --     completion = cmp.config.window.bordered({
+            --         winhighlight = "Normal:CmpPmenu,CursorLine:PmenuSel,Search:None",
+            --     }),
+            --     documentation = cmp.config.window.bordered({
+            --         documentation = {
+            --             border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+            --         },
+            --     }),
+            -- },
+            -- Configura os handlers do LSP para usar borda arredondada
             window = {
                 completion = cmp.config.window.bordered({
-                    winhighlight = "Normal:CmpPmenu,CursorLine:PmenuSel,Search:None",
+                    winhighlight = "Normal:CmpPmenu,FloatBorder:CmpPmenu,CursorLine:PmenuSel,Search:None",
                 }),
                 documentation = cmp.config.window.bordered({
-                    documentation = {
-                        border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-                    },
+                    winhighlight = "Normal:CmpPmenu,FloatBorder:CmpPmenu,CursorLine:PmenuSel,Search:None",
                 }),
             },
             -- Key maps

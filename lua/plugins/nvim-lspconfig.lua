@@ -3,8 +3,32 @@ return {
     dependencies = {
         { "williamboman/mason.nvim", opts = {} },
         "williamboman/mason-lspconfig.nvim",
-        { "j-hui/fidget.nvim", opts = {} },
+        { "j-hui/fidget.nvim",       opts = {} },
         "hrsh7th/cmp-nvim-lsp",
+    },
+    opts = {
+        -- @type lspconfig.options
+        servers = {
+            emmet_ls = {
+                filetypes = {
+                    "astro",
+                    "blade",
+                    "css",
+                    "eruby",
+                    "html",
+                    "htmldjango",
+                    "javascriptreact",
+                    "less",
+                    "pug",
+                    "sass",
+                    "scss",
+                    "svelte",
+                    "typescriptreact",
+                    "vue",
+                    "erb",
+                },
+            },
+        },
     },
     config = function()
         local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -18,6 +42,9 @@ return {
                     completion = {
                         callSnippet = "Replace",
                     },
+                    diagnostic = {
+                        globals = { 'vim' }
+                    }
                 },
             },
         })
@@ -82,6 +109,11 @@ return {
                         completion = {
                             callSnippet = "Replace",
                         },
+                        diagnostic = {
+                            globals = {
+                                'vim',
+                            }
+                        }
                     },
                 },
             },

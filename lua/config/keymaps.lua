@@ -1,34 +1,22 @@
--- Map to exit insert mode with 'jk'
-vim.keymap.set("i", "jk", "<esc>", { desc = "Exit from insert mode" })
+local map = vim.keymap.set
 
--- window movimentation
-vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Go to left window", remap = true })
-vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Go to up window", remap = true })
-vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Go to down window", remap = true })
-vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Go to right window", remap = true })
-
--- save file
-vim.keymap.set({ "n", "i" }, "<C-s>", function()
+map("i", "jk", "<esc>", {})
+map("n", "<C-h>", "<C-w>h", { desc = "Go to left window", remap = true })
+map("n", "<C-k>", "<C-w>k", { desc = "Go to up window", remap = true })
+map("n", "<C-j>", "<C-w>j", { desc = "Go to down window", remap = true })
+map("n", "<C-l>", "<C-w>l", { desc = "Go to right window", remap = true })
+map({ "n", "i" }, "<C-s>", function()
     vim.api.nvim_command("write")
 end, { desc = "force save all files", remap = true })
-
--- in my thinkpad T430, <C-/> doesn't work well
--- for this reason i setting up to <C-\\>
-vim.keymap.set(
+map({ "n", "x" }, "gy", '"+y', { desc = "Copiar para área de transferência" })
+map({ "n", "x" }, "gp", '"+p', { desc = "Colar da área de transferência" })
+map({ "n", "x" }, "gP", '"+P', { desc = "Colar da área de transferência antes do cursor" })
+map(
     { "i", "n", "t" },
     "<C-\\>",
     "<C-\\><C-n>:lua Snacks.terminal()<CR>",
     { desc = "Open integrated terminal", noremap = false }
 )
-
--- open sigature help
-vim.keymap.set({ "n" }, "<Leader>k", function()
+map({ "n" }, "<Leader>k", function()
     vim.lsp.buf.signature_help()
 end, { silent = true, noremap = true, desc = "toggle signature" })
-
--- copy selected text to clipboard
-vim.keymap.set({ "n", "x" }, "gy", '"+y', { desc = "Copiar para área de transferência" })
-
--- past from clipboard
-vim.keymap.set({ "n", "x" }, "gp", '"+p', { desc = "Colar da área de transferência" })
-vim.keymap.set({ "n", "x" }, "gP", '"+P', { desc = "Colar da área de transferência antes do cursor" })
