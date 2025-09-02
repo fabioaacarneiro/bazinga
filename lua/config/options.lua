@@ -20,16 +20,6 @@ vim.diagnostic.config({
     },
 })
 
--- Mostra diagnostics em popup flutuante automaticamente ao parar o cursor
--- vim.api.nvim_create_autocmd("CursorHold", {
---     callback = function()
---         vim.diagnostic.open_float(nil, { focus = false })
---     end,
--- })
-
--- vim.opt.updatetime = 250
-
-
 -- remove fundos escuros que quebram o thema
 local hl = vim.api.nvim_set_hl
 hl(0, "SnackPicker", { bg = "NONE" })
