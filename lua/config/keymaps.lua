@@ -11,17 +11,22 @@ end, { desc = "force save all files", remap = true })
 map({ "n", "x" }, "gy", '"+y', { desc = "Copiar para área de transferência" })
 map({ "n", "x" }, "gp", '"+p', { desc = "Colar da área de transferência" })
 map({ "n", "x" }, "gP", '"+P', { desc = "Colar da área de transferência antes do cursor" })
+
+-- Snacks.Terminal bind to show and hide
 map(
     { "i", "n", "t" },
     "<C-\\>",
     "<C-\\><C-n>:lua Snacks.terminal()<CR>",
     { desc = "Open integrated terminal", noremap = false }
 )
+
+-- toggle signature
 map({ "n" }, "<Leader>k", function()
     vim.lsp.buf.signature_help()
 end, { silent = true, noremap = true, desc = "toggle signature" })
 
 -- show diagnostic bind
+-- sign icons
 local signs = {
     Error = "",
     Warn  = "",
@@ -29,6 +34,7 @@ local signs = {
     Info  = "",
 }
 
+-- set diagnostic icons on kind of situations
 vim.diagnostic.config({
     signs = {
         text = {
@@ -40,11 +46,13 @@ vim.diagnostic.config({
     },
 })
 
+-- set DiagnosticSign
 for type, icon in pairs(signs) do
     local hl = "DiagnosticSign" .. type
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
 
+-- function to show diagnostics
 function ShowDiagnostic()
     vim.diagnostic.open_float(nil, {
         focus = false,
@@ -55,6 +63,7 @@ function ShowDiagnostic()
     })
 end
 
+-- set bind to ShowDiagnostic
 map("n", "<C-k>", function()
     ShowDiagnostic()
 end, { desc = "Open float diagnostic" })
