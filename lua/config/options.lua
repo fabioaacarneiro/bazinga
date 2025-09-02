@@ -9,10 +9,10 @@ o.relativenumber = true
 
 -- Desativa o texto virtual (aquele na direita da linha)
 vim.diagnostic.config({
-    virtual_text = false, -- Desativa o comentário lateral
-    signs = true,         -- Usa símbolos na margem
-    underline = true,     -- Sublinhar o erro
-    update_in_insert = false,
+    virtual_text = true, -- Desativa o comentário lateral
+    signs = true,        -- Usa símbolos na margem
+    underline = true,    -- Sublinhar o erro
+    update_in_insert = true,
     severity_sort = true,
     float = {
         source = "always", -- Mostra a origem do erro (Pyright, etc.)
@@ -21,48 +21,14 @@ vim.diagnostic.config({
 })
 
 -- Mostra diagnostics em popup flutuante automaticamente ao parar o cursor
-vim.api.nvim_create_autocmd("CursorHold", {
-    callback = function()
-        vim.diagnostic.open_float(nil, { focus = false })
-    end,
-})
+-- vim.api.nvim_create_autocmd("CursorHold", {
+--     callback = function()
+--         vim.diagnostic.open_float(nil, { focus = false })
+--     end,
+-- })
 
-vim.opt.updatetime = 250
+-- vim.opt.updatetime = 250
 
-local signs = {
-    Error = "",
-    Warn  = "",
-    Hint  = "󰌶",
-    Info  = "",
-}
-
-vim.diagnostic.config({
-    signs = {
-        text = {
-            [vim.diagnostic.severity.ERROR] = signs.Error,
-            [vim.diagnostic.severity.WARN]  = signs.Warn,
-            [vim.diagnostic.severity.HINT]  = signs.Hint,
-            [vim.diagnostic.severity.INFO]  = signs.Info,
-        },
-    },
-})
-
-for type, icon in pairs(signs) do
-    local hl = "DiagnosticSign" .. type
-    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-end
-
-vim.api.nvim_create_autocmd("CursorHold", {
-    callback = function()
-        vim.diagnostic.open_float(nil, {
-            focus = false,
-            border = "rounded",
-            source = "always",
-            header = "",
-            prefix = "",
-        })
-    end,
-})
 
 -- remove fundos escuros que quebram o thema
 local hl = vim.api.nvim_set_hl
