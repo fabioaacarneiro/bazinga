@@ -13,8 +13,8 @@ local colors = {
     fg_dark = "#999999",
     comment = "#777777",
 
-    pink    = "#dd5dab", -- Strings, Constants
-    blue    = "#4a90d9", -- Functions, Keywords
+    pink    = "#ff79b5", -- Strings, Constants
+    blue    = "#55aaff", -- Functions, Keywords
     yellow  = "#f4b731", -- Types, Variables
     magenta = "#db2e65", -- Statements, Booleans
     orange  = "#eb4d26", -- Numbers, Operators
@@ -51,7 +51,7 @@ set(0, "Special", { fg = colors.violet })
 -- 🧠 Treesitter
 set(0, "@string", { fg = colors.pink })
 set(0, "@variable", { fg = colors.fg })
-set(0, "@function", { fg = colors.blue })
+set(0, "@function", { fg = colors.green })
 set(0, "@keyword", { fg = colors.blue })
 set(0, "@constant", { fg = colors.pink })
 set(0, "@number", { fg = colors.orange })
